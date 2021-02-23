@@ -7,6 +7,7 @@ import { TrackData } from '../../data/track-data';
   styleUrls: ['./track-list.component.css']
 })
 export class TrackListComponent implements OnInit {
+
 	@Input() tracks:TrackData[];
 	@Input() hideArtist:boolean = false;
 	@Input() hideAlbum:boolean = false;
@@ -14,6 +15,7 @@ export class TrackListComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+  
   }
 
 }

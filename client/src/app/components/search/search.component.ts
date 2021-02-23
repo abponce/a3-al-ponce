@@ -4,6 +4,7 @@ import { ArtistData } from '../../data/artist-data';
 import { AlbumData } from '../../data/album-data';
 import { TrackData } from '../../data/track-data';
 import { ResourceData } from '../../data/resource-data';
+import { isEmptyExpression } from '@angular/compiler';
 
 @Component({
   selector: 'app-search',
@@ -24,6 +25,23 @@ export class SearchComponent implements OnInit {
 
   search() {
     //TODO: call search function in spotifyService and parse response
+    //console.log(this.searchString, this.searchCategory);
+    this.spotifyService.searchFor(this.searchCategory, this.searchString).then((data) => {
+      
+      data.forEach(item => { 
+        console.log("item: ",  item); 
+   
+        item.localId = "/" + item.category +'/' + item.id;
+        console.log(item.name);
+        console.log(item.localId);
+        
+       
+        //console.log(item.id)
+        //console.log(item.name);
+        //console.log(item) 
+      });
+      
+      this.resources = data;
+    });
   }
-
 }

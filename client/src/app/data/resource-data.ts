@@ -4,10 +4,13 @@ export abstract class ResourceData {
 	imageURL:string;
 	id:string;
 	url:string;
+	localId:string;
 
 	constructor(objectModel:{}) {
 		this.name = objectModel['name'];
 		this.id = objectModel['id'];
+
+		//console.log(objectModel)
 		if(objectModel['images'] && objectModel['images'].length > 0) {
 			this.imageURL = objectModel['images'][0].url;
 		} else if(objectModel['album'] && objectModel['album']['images'] && objectModel['album']['images'].length > 0) {
