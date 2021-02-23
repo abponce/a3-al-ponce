@@ -7,7 +7,7 @@
 - 1/1 Populating information about the user
 - 3/3 Populating the search component
 - 1.5/2 Artist page
-- 1/1.5 Album page
+- 1/1.5 Album pae
 - 1/1.5 Track page
 
 
